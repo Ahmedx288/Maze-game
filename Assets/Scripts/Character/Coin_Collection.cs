@@ -11,11 +11,13 @@ public class Coin_Collection : MonoBehaviour
     private static int score = 0;
     private Text scoreText;
 
+
     // Start is called before the first frame update
     void Start()
     {
         mAudioSource = GetComponent<AudioSource>();
         scoreText = GameObject.Find("Score_Text").GetComponent<Text>();
+        scoreText.text = "Score: " + score;
     }
 
     // Update is called once per frame
