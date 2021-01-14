@@ -7,17 +7,10 @@ using UnityEngine.SceneManagement;
 public class LevelLoader : MonoBehaviour
 {
     public Animator transition;
-
     void Start(){
         transition = GameObject.Find("FadeIn").GetComponent<Animator>();
     }
     
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void LoadNextLevel(){
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }

@@ -14,12 +14,6 @@ public class Level_Complete : MonoBehaviour
         LevelLoader = GameObject.Find("Level_Loader").GetComponent<LevelLoader>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag.Equals("Maze_Key")) {
 			Destroy(other.gameObject);
@@ -31,4 +25,11 @@ public class Level_Complete : MonoBehaviour
             LevelLoader.LoadNextLevel();
         }
 	}
+
+    void OnLevelWasLoaded()
+    {
+        //Get the new loader from the next scene
+        LevelLoader = GameObject.Find("Level_Loader").GetComponent<LevelLoader>();
+        mAudioSource = GetComponent<AudioSource>();
+    }
 }

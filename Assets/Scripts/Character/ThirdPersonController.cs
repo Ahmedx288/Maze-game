@@ -1,19 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class ThirdPersonController : MonoBehaviour
 {
     public CharacterController controller;
     public Transform Cam;
-
+    private CinemachineFreeLook freeLook;
     Animator Anim;
     public float speed = 5f;
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
 
+    void Awake(){
+        DontDestroyOnLoad(this.gameObject); 
+    }
+
     void Start(){
         Anim = GetComponent<Animator>();
+        Cam = GameObject.Find("Main Camera").GetComponent<Transform>();
+        freeLook = GameObject.Find("Third Person Camera").GetComponent<CinemachineFreeLook>();
+        freeLook.LookAt = this.transform;
+        freeLook.Follow  = this.transform;
     }
 
     // Update is called once per frame
@@ -35,5 +44,14 @@ public class ThirdPersonController : MonoBehaviour
         }else {
             Anim.SetBool("isWalking", false);
         }
+    }
+
+    void OnLevelWasLoaded(){
+        //Refresh the player camera and position according to the scene;
+        Cam = GameObject.Find("Main Camera").GetComponent<Transform>();
+        freeLook = GameObject.Find("Third Person Camera").GetComponent<CinemachineFreeLook>();
+        freeLook.LookAt = this.transform;
+        freeLook.Follow  = this.transform;
+        transform.position = new Vector3(0,0,0);
     }
 }
