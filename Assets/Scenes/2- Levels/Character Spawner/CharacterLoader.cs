@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CharacterLoader : MonoBehaviour {
     public GameObject[] charactersPrefabs;
+    public GameObject prefab;
     
     void Start() {
         int selectedCharacter = PlayerPrefs.GetInt("SelectedChar");

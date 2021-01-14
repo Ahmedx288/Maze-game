@@ -227,6 +227,8 @@ GameObject:
   - component: {fileID: 7127972321714151354}
   - component: {fileID: 497680110298932380}
   - component: {fileID: 8987938399866910603}
+  - component: {fileID: -6231011115181242919}
+  - component: {fileID: 1393861532101398546}
   m_Layer: 0
   m_Name: Ekard
   m_TagString: Player
@@ -425,6 +427,33 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-6231011115181242919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53265626318621577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7dcd4dab16e07e459471ba7f14bd336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  score: 0
+--- !u!114 &1393861532101398546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53265626318621577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17d474d9cd587ec439b813627b43c9ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  period: 3
 --- !u!1 &53265626318621579
 GameObject:
   m_ObjectHideFlags: 0

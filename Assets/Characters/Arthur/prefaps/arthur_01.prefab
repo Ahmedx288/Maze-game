@@ -3032,6 +3032,8 @@ GameObject:
   - component: {fileID: 8745597558419746302}
   - component: {fileID: 8654188536718729402}
   - component: {fileID: 2597816237486992964}
+  - component: {fileID: 6163386755925672833}
+  - component: {fileID: 6078442911554692806}
   m_Layer: 0
   m_Name: arthur_01
   m_TagString: Player
@@ -3230,6 +3232,33 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6163386755925672833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5930651934574334247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7dcd4dab16e07e459471ba7f14bd336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  score: 0
+--- !u!114 &6078442911554692806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5930651934574334247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17d474d9cd587ec439b813627b43c9ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  period: 3
 --- !u!1 &5930651934574334249
 GameObject:
   m_ObjectHideFlags: 0

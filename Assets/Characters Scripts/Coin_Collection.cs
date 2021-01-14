@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Coin_Collection : MonoBehaviour {   
     private AudioSource mAudioSource = null;
     public AudioClip CoinSound = null;
-    private static int score = 0;
+    public static int score = 0;
     private Text scoreText;
 
     // Start is called before the first frame update
@@ -27,4 +27,9 @@ public class Coin_Collection : MonoBehaviour {
 			Destroy(other.gameObject);
 		}
 	}
+
+
+    public static void setScore(int sc) {
+        score = sc;
+    }
 }
