@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Level_Complete : MonoBehaviour {
     private AudioSource mAudioSource = null;
@@ -24,8 +25,15 @@ public class Level_Complete : MonoBehaviour {
         }
 	}
 
+    void OnEnable() {
+        SceneManager.sceneLoaded += OnSceneLoad;
+    }
+
+    void OnDisable() {
+        SceneManager.sceneLoaded -= OnSceneLoad;
+    }
     //Get the new loader from the next scene (Refresh pointed Objects)
-    void OnLevelWasLoaded() {
+    void OnSceneLoad(Scene scene, LoadSceneMode mode) {
         LevelLoader = GameObject.Find("Level_Loader").GetComponent<LevelLoader>();
         mAudioSource = GetComponent<AudioSource>();
     }

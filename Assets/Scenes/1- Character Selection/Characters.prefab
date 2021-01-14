@@ -42,9 +42,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3613616545948292648}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28064021305030d45a05b258baec9787, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f8103060a078224687852e5ac0abdd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  previousButton: {fileID: 0}
+  nextButton: {fileID: 0}
 --- !u!1001 &3613616545230875416
 PrefabInstance:
   m_ObjectHideFlags: 0

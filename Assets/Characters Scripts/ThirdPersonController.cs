@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class ThirdPersonController : MonoBehaviour {
     public CharacterController controller;
+    MiniMapFollow MiniMapFollow;
     public Transform Cam;
     private CinemachineFreeLook freeLook;
     Animator Anim;
@@ -26,6 +28,11 @@ public class ThirdPersonController : MonoBehaviour {
         freeLook = GameObject.Find("Third Person Camera").GetComponent<CinemachineFreeLook>();
         freeLook.LookAt = this.transform;
         freeLook.Follow  = this.transform;
+
+        //Get the script from the mini map camera
+        MiniMapFollow = GameObject.Find("Mini Map Camera").GetComponent<MiniMapFollow>();
+        //Set the mini map camera
+        MiniMapFollow.Player = this.transform;
     }
 
     // Movement Control and Animation
@@ -48,8 +55,15 @@ public class ThirdPersonController : MonoBehaviour {
         }
     }
 
+    void OnEnable() {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable(){
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
     //Refresh the player camera and position according to the scene;  (Refresh pointed Objects)
-    void OnLevelWasLoaded(){
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode){
         Cam = GameObject.Find("Main Camera").GetComponent<Transform>();
         freeLook = GameObject.Find("Third Person Camera").GetComponent<CinemachineFreeLook>();
         freeLook.LookAt = this.transform;
@@ -57,5 +71,10 @@ public class ThirdPersonController : MonoBehaviour {
 
         //Send the character to the level starting poing
         transform.position = new Vector3(0,0,0);
+
+        //Get the script from the mini map camera
+        //Set the mini map camera
+        MiniMapFollow = GameObject.Find("Mini Map Camera").GetComponent<MiniMapFollow>();
+        MiniMapFollow.Player = this.transform;
     }
 }
