@@ -3023,13 +3023,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b559f41b9ed9051478341d764e6784dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition: {fileID: 0}
+  ManagerData: {fileID: 1066950772}
+  transition: {fileID: 1066950771}
   CharacterSpawner: {fileID: 2358700879599654498, guid: 194ab3a71d8d1e34e9d781c321541c48,
     type: 3}
   ScoreSpawner: {fileID: 663661889596732115, guid: b13c32592fec4d8498253de0640902be,
     type: 3}
-  MapSpawner: {fileID: 5134707631303015019, guid: 297383f50b652404d8d6d015f591b856,
+  MiniMapSpawner: {fileID: 5134707631303015019, guid: 297383f50b652404d8d6d015f591b856,
     type: 3}
+  controller: {fileID: 0}
 --- !u!4 &1066950770
 Transform:
   m_ObjectHideFlags: 0
@@ -3077,7 +3079,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 0
   score: 0
-  trans: []
+  trans:
+  - 0
+  - 0
+  - 0
 --- !u!114 &1066950773
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,13 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class ThirdPersonController : MonoBehaviour {
     public CharacterController controller;
+
+    public GameObject MiniMapSpawner;
     MiniMapFollow MiniMapFollow;
+
     public Transform Cam;
     private CinemachineFreeLook freeLook;
+
     Animator Anim;
     public float speed = 5f;
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
+
+    Manager Manager;
 
     void Awake() {
         DontDestroyOnLoad(this.gameObject); 
@@ -28,6 +34,8 @@ public class ThirdPersonController : MonoBehaviour {
         freeLook = GameObject.Find("Third Person Camera").GetComponent<CinemachineFreeLook>();
         freeLook.LookAt = this.transform;
         freeLook.Follow  = this.transform;
+
+        Manager = GameObject.Find("SaveLoad Manager").GetComponent<Manager>();
 
         //Get the script from the mini map camera
         MiniMapFollow = GameObject.Find("Mini Map Camera").GetComponent<MiniMapFollow>();
@@ -76,5 +84,11 @@ public class ThirdPersonController : MonoBehaviour {
         //Set the mini map camera
         MiniMapFollow = GameObject.Find("Mini Map Camera").GetComponent<MiniMapFollow>();
         MiniMapFollow.Player = this.transform;
+
+        Manager = GameObject.Find("SaveLoad Manager").GetComponent<Manager>();
+        if(Manager.flag){
+            transform.position = new Vector3(Manager.ManagerData.trans[0],Manager.ManagerData.trans[1],Manager.ManagerData.trans[2]);
+        }
+
     }
 }

@@ -8,7 +8,7 @@ public class CharacterLoader : MonoBehaviour {
     
     void Start() {
         int selectedCharacter = PlayerPrefs.GetInt("SelectedChar");
-        GameObject prefab = charactersPrefabs[selectedCharacter];
-        Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity);
+        prefab = charactersPrefabs[selectedCharacter];
+        prefab = Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity);
     }
 }

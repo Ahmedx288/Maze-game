@@ -302,6 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: -1812024354362378112}
+  MiniMapSpawner: {fileID: 0}
   Cam: {fileID: 0}
   speed: 5
   turnSmoothTime: 0.1
@@ -441,6 +442,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 0
   score: 0
+  trans:
+  - 0
+  - 0
+  - 0
 --- !u!114 &1393861532101398546
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,15 +11,16 @@ public class UpdatePlayerData : MonoBehaviour
     void Start(){
         data = GetComponent<TransferPlayerData>();
     }
-    void Update()
-    {
+
+    void Update() {
         if (Time.time > nextActionTime)
         {
             data.score = Coin_Collection.score;
             data.level = SceneManager.GetActiveScene().buildIndex;
+            data.trans[0] = transform.position.x;
+            data.trans[1] = transform.position.y; 
+            data.trans[2] = transform.position.z;
 
-            Debug.Log("Saved score: " + data.score);
-            Debug.Log("Saved level: " + data.level);
             SaveLoadSYSTEM.Save(data);
         }
     }
