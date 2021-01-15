@@ -37,6 +37,7 @@ public class ThirdPersonController : MonoBehaviour {
 
         Manager = GameObject.Find("SaveLoad Manager").GetComponent<Manager>();
 
+        
         //Get the script from the mini map camera
         MiniMapFollow = GameObject.Find("Mini Map Camera").GetComponent<MiniMapFollow>();
         //Set the mini map camera
