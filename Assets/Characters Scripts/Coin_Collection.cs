@@ -20,7 +20,10 @@ public class Coin_Collection : MonoBehaviour {
 		if (other.gameObject.tag.Equals("Coin")) {
             score += 20;
             scoreText.text = "Score: " + score;
-
+            
+            if(score > PlayerPrefs.GetInt("Highest")){
+                PlayerPrefs.SetInt("Highest", score);
+            }
 			if(mAudioSource != null && CoinSound != null){
 				mAudioSource.PlayOneShot(CoinSound);
 			}
